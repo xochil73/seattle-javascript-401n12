@@ -8,6 +8,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
+        <p> Welcome</p>
         <SectionForm onComplete={this.props.mappedSectionCreate}/>
         { this.props.sections.map(current => <p>{current.title}</p>)}
       </div>
@@ -18,8 +19,9 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   // Vinicio - anything I return here WILL become props
+  // Vinicio - now the state is not just the sections :(
   return {
-    sections: state,
+    sections: state.sections, // state:{sections:, cards:}
   };
 };
 
